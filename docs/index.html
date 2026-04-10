@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssessorAI Platform</title>
+    <meta
+      name="description"
+      content="Plataforma para apoio legislativo com backend, frontend e crawler integrados."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">AssessorAI Platform</p>
+        <h1>Infraestrutura digital para operacao legislativa assistida por IA</h1>
+        <p class="lead">
+          Uma plataforma integrada para mandatos e equipes parlamentares com
+          backend operacional, experiencia web e coleta automatizada de dados
+          legislativos.
+        </p>
+        <div class="actions">
+          <a href="#arquitetura" class="button primary">Ver arquitetura</a>
+          <a href="#componentes" class="button secondary">Explorar componentes</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="componentes">
+        <div class="container grid three">
+          <article class="card">
+            <h2>Backend</h2>
+            <p>
+              API central da plataforma com fluxos legislativos, geracao de
+              documentos, autenticacao e console administrativo.
+            </p>
+            <span class="tag">FastAPI + Streamlit</span>
+          </article>
+          <article class="card">
+            <h2>Frontend</h2>
+            <p>
+              Aplicacao web para uso cotidiano das equipes, com experiencia de
+              produto e camada BFF para integracao segura com a API.
+            </p>
+            <span class="tag">Next.js + React</span>
+          </article>
+          <article class="card">
+            <h2>Crawler</h2>
+            <p>
+              Coleta automatizada de proposicoes e metadados legislativos em
+              multiplas casas, com operacao e monitoramento dedicados.
+            </p>
+            <span class="tag">Scrapy + Scrapyd</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="arquitetura">
+        <div class="container">
+          <p class="eyebrow">Arquitetura</p>
+          <h2>Um monorepo para tres frentes complementares</h2>
+          <div class="architecture">
+            <div class="arch-card">
+              <h3>1. Coleta</h3>
+              <p>
+                O crawler captura dados legislativos, documentos e eventos de
+                casas legislativas para alimentar processos internos.
+              </p>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-card">
+              <h3>2. Processamento</h3>
+              <p>
+                O backend organiza dados, aplica regras de negocio e habilita
+                fluxos assistidos por IA para a operacao parlamentar.
+              </p>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-card">
+              <h3>3. Entrega</h3>
+              <p>
+                O frontend oferece a camada de uso diaria para assessores,
+                gestores e operadores da plataforma.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid two">
+          <div>
+            <p class="eyebrow">Casos de uso</p>
+            <h2>Onde a plataforma atua</h2>
+            <ul class="feature-list">
+              <li>Redacao e apoio a documentos legislativos</li>
+              <li>Gestao de mandatos e operacao administrativa</li>
+              <li>Busca de referencias normativas e politicas</li>
+              <li>Coleta e organizacao de dados legislativos publicos</li>
+              <li>Experiencias publicas e privadas para equipes e eleitorado</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <p class="eyebrow">Estrutura do repositorio</p>
+            <pre><code>apps/
+  server/
+  client/
+  crawler/
+
+docs/
+.github/workflows/</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container narrow center">
+          <p class="eyebrow">Publicacao</p>
+          <h2>Pronto para GitHub Pages</h2>
+          <p>
+            Este site e publicado a partir da pasta <code>docs/</code> com um
+            workflow de GitHub Actions dedicado ao deploy de Pages.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

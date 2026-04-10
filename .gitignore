@@ -1,0 +1,43 @@
+# Monorepo
+.DS_Store
+Thumbs.db
+
+# Environment files
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example
+!**/.env-sample
+
+# JavaScript / Next.js
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+**/coverage/
+**/*.tsbuildinfo
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.coverage
+**/.coverage.*
+**/htmlcov/
+**/.venv/
+**/venv/
+
+# Backend local files
+apps/server/google-key.json
+apps/server/assessorai.db
+apps/server/*.sqlite3
+apps/server/assessoraidev*.json
+
+# Crawler generated artifacts
+apps/crawler/storage/
+apps/crawler/output/
+apps/crawler/items/
+apps/crawler/logs/
+apps/crawler/downloads/
+apps/crawler/dbs/
