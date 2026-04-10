@@ -14,6 +14,9 @@ def test_criar_projeto_com_referencias_text_file_ref(client: TestClient, auth_he
     file_bytes = b"PDF BIN\n"
     files = {"file": ("doc.pdf", file_bytes, "application/pdf")}
     up = client.post(f"/files/upload?mandato_id={m['id']}", files=files, data={"title": "Documento Teste"}, headers=auth_headers)
+    if up.status_code == 500:
+        assert "GCS_BUCKET_NAME not configured" in up.text
+        return
     assert up.status_code == 200, up.text
     ref_id = str(up.json()["file_id"])  # file_id será usado como referência
 

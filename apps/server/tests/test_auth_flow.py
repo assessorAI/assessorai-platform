@@ -158,7 +158,7 @@ def test_forgot_password_invalid_email(client):
 def test_reset_password_valid_token(client, db_session, admin_user):
     """Testa redefinição de senha com token válido."""
     from datetime import datetime, timedelta, timezone
-    from db.models import PasswordResetToken as PasswordResetTokenORM
+    from assessorai.db.models import PasswordResetToken as PasswordResetTokenORM
     import secrets
     
     # Cria token válido diretamente no banco
@@ -206,7 +206,7 @@ def test_reset_password_invalid_token(client):
 def test_reset_password_expired_token(client, db_session, admin_user):
     """Testa redefinição com token expirado."""
     from datetime import datetime, timedelta, timezone
-    from db.models import PasswordResetToken as PasswordResetTokenORM
+    from assessorai.db.models import PasswordResetToken as PasswordResetTokenORM
     import secrets
     
     # Cria token expirado (1 hora no passado)
@@ -236,7 +236,7 @@ def test_reset_password_expired_token(client, db_session, admin_user):
 def test_reset_password_used_token(client, db_session, admin_user):
     """Testa redefinição com token já utilizado."""
     from datetime import datetime, timedelta, timezone
-    from db.models import PasswordResetToken as PasswordResetTokenORM
+    from assessorai.db.models import PasswordResetToken as PasswordResetTokenORM
     import secrets
     
     # Cria token válido mas já usado

@@ -23,10 +23,10 @@ router = APIRouter(
 )
 
 def _get_bucket_and_client():
-    client = storage.Client()
     bucket_name = os.getenv("GCS_BUCKET_NAME")
     if not bucket_name:
         raise HTTPException(status_code=500, detail="GCS_BUCKET_NAME not configured")
+    client = storage.Client()
     bucket = client.bucket(bucket_name)
     return client, bucket, bucket_name
 

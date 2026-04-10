@@ -96,19 +96,19 @@ def send_password_reset_emails(
     - If both user_ids and emails are None, return error (no users selected)
     - template: "password_reset" (default) or "bubble_import_password_reset"
     """
-    email_service = get_email_service()
-    
-    if not email_service.is_configured:
-        raise HTTPException(
-            status_code=503,
-            detail="Email service not configured. Please configure SendGrid API key."
-        )
-    
     # Check if nothing was specified
     if not payload.user_ids and not payload.emails:
         raise HTTPException(
             status_code=400,
             detail="No users specified. Provide user_ids, emails, or emails=['all'] to send to all users."
+        )
+
+    email_service = get_email_service()
+
+    if not email_service.is_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="Email service not configured. Please configure SendGrid API key."
         )
     
     # Determine which users to send to
