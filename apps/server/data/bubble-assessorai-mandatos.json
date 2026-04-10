@@ -1,0 +1,17 @@
+[
+  {
+    "nome_parlamentar": "Mandato Exemplo",
+    "cargo": "Vereador(a)",
+    "casa_legislativa": "Camara Municipal Exemplo",
+    "municipio": "Cidade Exemplo",
+    "uf": "SP",
+    "perfil": "Fiscalizador",
+    "posicionamento": "Centro",
+    "temas": "Educacao, Mobilidade",
+    "objetivo_do_ano": "Fortalecer transparencia e participacao social.",
+    "usuarios": "usuario.exemplo@example.org",
+    "Creation Date": "Jan 01, 2026 09:00 am",
+    "Modified Date": "Jan 02, 2026 10:00 am",
+    "unique id": "sample-mandato-001"
+  }
+]

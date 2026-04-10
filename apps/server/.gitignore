@@ -1,0 +1,65 @@
+# Ambiente virtual
+.venv/
+
+# Gerado pelo shellHook do flake.nix
+.nix-shell-helpers.sh
+venv/
+ENV/
+env/
+
+# Ambiente local Nix/Postgres
+.nix-postgres/
+.nix-shell-helpers.sh
+
+# Metadados do pacote Python
+*.egg-info/
+
+# Arquivos de configuração
+.env
+
+# Ambiente local Nix/Postgres
+.nix-postgres/
+
+# Arquivos de cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Arquivos de banco de dados
+*.sqlite3
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos do editor
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+.pytest_cache/
+.benchmarks/
+
+assessoraidev*.json
+assessorai.db
+google-key.json
+
+# Test and sample data files
+data/*
+data/bubble-*.json
+data/mandato-*.json
+data/pedro.json
+sp-*.json
+!data/README.md
+!data/bubble-assessorai.json
+!data/bubble-assessorai-mandatos.json

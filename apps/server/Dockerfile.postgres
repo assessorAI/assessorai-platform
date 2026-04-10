@@ -1,0 +1,15 @@
+FROM pgvector/pgvector:0.8.1-pg16-trixie
+
+# Set environment variables for PostgreSQL
+ENV POSTGRES_DB=assessorai
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=password
+
+# Copy all migrations to run on database initialization
+COPY db/migrations/ /docker-entrypoint-initdb.d/
+
+# Expose the default PostgreSQL port
+EXPOSE 5432
+
+# Default command to run PostgreSQL
+CMD ["postgres"]

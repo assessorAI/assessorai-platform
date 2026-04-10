@@ -1,0 +1,28 @@
+[
+  {
+    "acesso": "Gestor",
+    "admin": "sim",
+    "area": "Institucional",
+    "first name": "Usuario",
+    "last name": "Exemplo",
+    "funcao": "Diretoria",
+    "email": "usuario.exemplo@example.org",
+    "Mandato": "Mandato Exemplo",
+    "Creation Date": "Jan 01, 2026 09:00 am",
+    "Modified Date": "Jan 02, 2026 10:00 am",
+    "unique id": "sample-user-001"
+  },
+  {
+    "acesso": "Usuario",
+    "admin": "nao",
+    "area": "Mandatos",
+    "first name": "Pessoa",
+    "last name": "Teste",
+    "funcao": "Assessoria",
+    "email": "pessoa.teste@example.org",
+    "Mandato": "Mandato Exemplo",
+    "Creation Date": "Jan 03, 2026 11:30 am",
+    "Modified Date": "Jan 04, 2026 08:45 am",
+    "unique id": "sample-user-002"
+  }
+]

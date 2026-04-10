@@ -1,0 +1,10 @@
+fly.toml
+.git/
+__pycache__/
+.envrc
+.venv/
+.nix-postgres/
+.pytest_cache/
+htmlcov/
+*.log
+assessorai.db

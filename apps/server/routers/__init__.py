@@ -1,0 +1,33 @@
+from . import (
+    admin,
+    auth,
+    coleta_demandas,
+    coleta_demandas_triagem,
+    expertPL,
+    mandatos,
+    oficios,
+    prompts,
+    prompt_evaluation,
+    upload,
+    users,
+    validation,
+    vectorSearch,
+    vector_admin,
+)
+
+__all__ = [
+    "admin",
+    "auth",
+    "coleta_demandas",
+    "coleta_demandas_triagem",
+    "expertPL",
+    "mandatos",
+    "oficios",
+    "prompts",
+    "prompt_evaluation",
+    "upload",
+    "users",
+    "validation",
+    "vectorSearch",
+    "vector_admin",
+]
