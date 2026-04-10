@@ -1,4 +1,4 @@
-const BASE_URL = process.env.BACKEND_ASSESSORAI_URL;
+const BASE_URL = process.env.BACKEND_ASSESSORAI_URL ?? "http://localhost:8000";
 
 export const ENDPOINTS: Record<string, Record<string, string>> = {
   ADM: {

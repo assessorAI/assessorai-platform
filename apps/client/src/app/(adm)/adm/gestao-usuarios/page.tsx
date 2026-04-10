@@ -4,8 +4,7 @@ import { admService } from "@/api/adm/adm.service";
 import { AdmSummaryResponse } from "@/api/adm/adm.types";
 
 
-// Revalidar o cache da página a cada 60 segundos
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function GestaoUsuariosPage() {
   const breadcrumb = [
