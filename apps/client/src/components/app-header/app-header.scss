@@ -1,0 +1,27 @@
+@use '@/styles/tokens.scss' as *;
+
+
+.app-header {
+  margin-bottom: $spacing-xl;
+}
+
+.app-header-breadcrumb {
+  margin-bottom: $spacing-md;
+}
+
+.app-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xs;
+}
+
+.app-header-actions {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+}
+
+.app-header-description {
+  @apply text-sm text-gray-500;
+}

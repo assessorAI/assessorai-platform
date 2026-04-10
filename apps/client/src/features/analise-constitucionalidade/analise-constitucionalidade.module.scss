@@ -1,0 +1,22 @@
+@use '@/styles/tokens.scss' as *;
+
+
+.analisarPlExistentePage {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: 0 $spacing-2xl;
+}
+
+.button {
+  @apply float-right;
+  margin-top: $spacing-sm;
+}
+
+.loader {
+  @apply animate-spin;
+}
+
+.sparkles {
+  @apply h-5 w-5;
+}

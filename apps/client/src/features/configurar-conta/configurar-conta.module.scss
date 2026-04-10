@@ -1,0 +1,32 @@
+@use "@/styles/tokens.scss" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.submit {
+    align-self: flex-end;
+    width: fit-content;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-xs;
+    flex-wrap: wrap;
+
+    .formGroupItem {
+        flex: 1;
+    }
+}
+
+.header {
+    @apply border-b border-gray-200;
+    padding-bottom: $spacing-sm;
+}
+
+.title {
+    composes: lead-title from global;
+}

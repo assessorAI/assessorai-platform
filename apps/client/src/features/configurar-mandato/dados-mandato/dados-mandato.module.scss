@@ -1,0 +1,52 @@
+@use "@/styles/tokens.scss" as *;
+
+.header {
+  @apply border-b border-gray-200;
+  padding-bottom: $spacing-sm;
+}
+
+.title {
+  composes: lead-title from global;
+}
+
+.form {
+  @apply space-y-4;
+}
+
+.ufMunicipioContainer {
+  @apply flex flex-row gap-2;
+}
+
+.municipioItem {
+  @apply w-full;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.radioGroupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.radioGroupItem {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.radioGroupLabelContent {
+  margin-top: 0 !important;
+  gap: $spacing-xs;
+  display: flex;
+  flex-direction: column;
+  max-width: 430px;
+}
+
+.submitButton {
+  float: right;
+}

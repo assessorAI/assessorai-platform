@@ -1,0 +1,35 @@
+@use "@/styles/tokens.scss" as *;
+
+.hasThreeMembersNode, .noMembersNode {
+    @apply text-sm text-brand-primary;
+    padding-top: $spacing-md;
+    max-width: 500px;
+}
+
+.actionsCell {
+    @apply text-right;
+}
+
+.actionsIcon {
+    width: 20px !important;
+    height: 20px !important;
+}
+.actionsRemoveUser {
+    @apply text-destructive;
+
+    &:hover {
+        @apply text-destructive/80;
+    }
+}
+
+.buttonRemoveMember {
+    @apply bg-destructive text-white;
+
+    &:hover {
+        @apply bg-rose-800;
+    }
+}
+
+.helpLink {
+    composes: link from global;
+}

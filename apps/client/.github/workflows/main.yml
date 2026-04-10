@@ -1,0 +1,35 @@
+name: Next.js CI
+
+on:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar build
+        run: npm run build
+        env:
+          BACKEND_ASSESSORAI_URL: http://localhost:8000
+          AUTH_SECRET: test-auth-secret-for-ci-only
+          NEXTAUTH_URL: http://localhost:3000
+          GOOGLE_PLACES_API_KEY: test-google-places-key
+
+      - name: Rodar Lint
+        run: npm run lint
+
+      - name: Rodar Testes
+        run: npm run test

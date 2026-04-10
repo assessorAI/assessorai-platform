@@ -1,0 +1,158 @@
+@use "@/styles/tokens" as *;
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.title {
+  @apply font-semibold;
+  align-self: center;
+}
+
+.submit {
+  width: 100%;
+}
+
+.stepNumber {
+  @apply text-xs text-gray-500 bg-gray-200;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $spacing-sm;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stepHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.backIcon {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.link {
+  align-self: center;
+  @apply text-sm text-gray-500
+}
+
+.ufMunicipioContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-sm;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.radioGroupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.radioGroupItem {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.radioGroupLabelContent {
+  margin-top: 0 !important;
+  gap: $spacing-xs;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  align-items: center;
+}
+
+.checkboxContainer Label {
+  margin-top: 0 !important;
+}
+
+.lgpdContainer {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  align-items: center;
+  
+  @apply text-sm;
+  
+  label {
+    margin-top: 0 !important;
+    cursor: pointer;
+  }
+}
+
+.feedbackContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feedbackIconContainer {
+  padding: $spacing-xs;
+  @apply rounded-full bg-emerald-100;
+}
+
+.feedbackIcon {
+  @apply size-7 text-emerald-600 stroke-[3px];
+}
+
+.feedbackButton {
+  width: 100%;
+}
+
+.feedbackDescription {
+  @apply text-gray-500;
+  max-width: 324px;
+}
+
+.tooltipContainer {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tooltipTrigger {
+  @apply text-muted-foreground hover:text-foreground;
+  cursor: pointer;
+}
+
+.tooltipTriggerIcon {
+  @apply h-5 w-5;
+}
+
+.tooltipContent {
+  @apply max-w-xs;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .ufMunicipioContainer {
+    grid-template-columns: 1fr;
+  }
+}

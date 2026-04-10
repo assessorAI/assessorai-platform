@@ -1,0 +1,44 @@
+@use "@/styles/tokens.scss" as *;
+
+.card {
+  width: 344px;
+  height: 200px;
+  gap: $spacing-xs;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.title {
+  @apply text-sm font-semibold;
+}
+
+.description {
+  @apply text-sm;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-transform: lowercase;
+}
+
+.description::first-letter {
+  text-transform: uppercase;
+}
+
+.footer {
+  @apply text-xs text-gray-600;
+}
+
+.verCompleto {
+  @apply text-xs text-brand-accent;
+  float: right;
+  margin-top: $spacing-sm;
+}

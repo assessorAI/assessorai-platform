@@ -1,0 +1,44 @@
+@use "@/styles/tokens.scss" as *;
+
+.card {
+  width: 344px;
+  height: 165px;
+  padding: $spacing-md;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.title {
+  @apply text-sm;
+}
+
+.badge {
+  @apply bg-brand-accent-20 text-brand-accent font-normal rounded-full;
+  display: flex;
+  gap: $spacing-xxs;
+  box-shadow: none;
+  width: fit-content;
+  padding: $spacing-xs;
+
+  &:hover {
+    @apply bg-brand-accent-20;
+  }
+}
+
+
+.icon {
+  @apply size-3;
+}
+
+.description {
+  @apply text-sm text-muted-foreground;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

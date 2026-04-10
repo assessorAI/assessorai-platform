@@ -1,0 +1,72 @@
+@use "@/styles/tokens.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.indicadoresContainer {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.indicadorCard {
+  flex: 1;
+}
+
+.indicadorCardContent {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+}
+
+.indicadorCardContentTextNumber {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xxs;
+}
+
+.indicadorCardContentTextNumber .percentageBadge {
+  @apply text-xs font-medium rounded-md;
+  padding: 0 $spacing-xs;
+  align-self: center;
+}
+
+.indicadorCardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  @apply bg-gray-300 rounded-md;
+}
+
+.indicadorCardIconIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.indicadorCardContentText {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxs;
+}
+
+.indicadorCardContentTextTitle {
+  @apply text-sm text-muted-foreground;
+}
+
+.indicadorCardContentTextValue {
+  @apply text-2xl font-medium;
+}
+
+.indicadorCardIconSuccess {
+  @apply text-green-600 bg-green-100;
+}
+
+.indicadorCardIconWarning {
+  @apply bg-gray-200 text-gray-600 font-medium;
+}

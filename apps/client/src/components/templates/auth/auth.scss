@@ -1,0 +1,57 @@
+@use "@/styles/tokens.scss" as *;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1127px;
+  justify-items: center;
+  gap: $spacing-4xl;
+  padding: $spacing-4xl 0;
+}
+
+.secondaryColumn {
+  width: 550px;
+  z-index: 10;
+}
+
+.auth-form {
+  padding: $spacing-6xl;
+}
+
+.purpleSvg {
+  display: none;
+  position: fixed;
+  z-index: 0;
+  fill: none;
+}
+
+.purpleSvg path {
+  stroke: #7515E3;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.graySvg {
+  display: none;          
+  position: fixed;      
+  z-index: 0;             
+  overflow: hidden;   
+  fill: none;
+}
+
+.graySvg path {
+  opacity: 0.5;
+  fill: #E5E7EB;
+}
+
+/* Specific styles for each breakpoint */
+@import './auth.mobile.scss';
+@import './auth.tablet.scss';
+@import './auth.desktop.scss';

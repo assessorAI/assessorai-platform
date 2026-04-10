@@ -1,0 +1,54 @@
+@use "@/styles/tokens.scss" as *;
+
+.comboboxTrigger {
+  @apply w-full border border-input text-gray-500 font-normal;
+  border-radius: calc(var(--radius) - 2px);
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px !important;
+
+  &:focus-visible {
+    outline: 2px solid hsl(var(--gray-400));
+    outline-offset: 1px;
+    border-radius: calc(var(--radius) - 2px);
+    box-shadow: none !important;
+  }
+
+  &:focus {
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  &:hover {
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  &:disabled {
+    opacity: 1;
+    @apply border-gray-300 bg-gray-200 text-gray-500;
+    cursor: not-allowed;
+  }
+
+  &[aria-readonly="true"] {
+    opacity: 1;
+    @apply border-gray-300 bg-gray-100 text-gray-500;
+    cursor: not-allowed;
+  }
+}
+
+.comboboxIcon {
+  @apply opacity-50;
+}
+
+.comboboxInput {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.comboboxEmpty {
+    @apply text-gray-500 text-sm;
+    padding: $spacing-sm;
+}
+

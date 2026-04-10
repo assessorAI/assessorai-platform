@@ -1,0 +1,86 @@
+@use '@/styles/tokens.scss' as *;
+
+.container {
+  @apply bg-white rounded-lg shadow-sm border p-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.header {
+  @apply flex justify-between;
+}
+
+.title {
+  composes: card-title from global;
+  @apply font-semibold;
+}
+
+.header-accent {
+  & .title {
+    @apply text-brand-accent;
+  }
+  & .tag {
+    @apply bg-brand-accent-40 text-brand-accent;
+  }
+}
+
+.header-secondary {
+  & .title {
+    @apply text-brand-secondary;
+  }
+  & .tag {
+    @apply bg-brand-secondary-20 text-brand-secondary;
+  }
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  @apply text-xs font-medium rounded-full px-2 py-1;
+}
+
+.sparkles {
+  width: 1rem;
+  height: 1rem;
+}
+
+.actions {
+  @apply flex;
+  gap: $spacing-xs;
+}
+
+.content {
+  @apply border border-gray-300 rounded-md text-sm;
+  padding: $spacing-sm;
+}
+
+.content > * {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.content h1, .content h2 {
+  @apply text-base font-semibold text-gray-600;
+}
+
+.content > *:first-child > :is(h1, h2):first-child {
+  @apply flex justify-center;
+}
+
+.content p, .content ol {
+  @apply text-gray-500;
+}
+
+.content ol {
+  @apply list-decimal list-inside;
+  padding: 0 $spacing-sm;
+}
+
+
+.content ul {
+  @apply list-disc list-inside;
+  padding: 0 $spacing-sm;
+}

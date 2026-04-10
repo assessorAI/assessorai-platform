@@ -1,0 +1,64 @@
+@use "@/styles/tokens.scss" as *;
+
+.dialogContent {
+  @apply max-w-3xl;
+  @apply text-sm;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialogHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  flex: 1;
+  min-height: 0;
+}
+
+.subTitle {
+  @apply text-xs font-normal text-gray-600;
+  margin-top: $spacing-xs;
+}
+
+.dialogDescription {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dialogTitleContainer {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.dialogSubTitle {
+  @apply text-sm font-semibold font-sora;
+}
+
+.summaryDialog {
+  @apply text-sm rounded-lg border border-gray-300 bg-gray-100;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.chunkDescriptionDialog {
+  @apply text-sm text-gray-600 rounded-lg border border-gray-300 bg-gray-100;
+  padding: $spacing-md;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.link {
+  @apply text-brand-accent;
+  text-decoration: underline;
+}

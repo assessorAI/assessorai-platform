@@ -1,0 +1,87 @@
+@use '@/styles/tokens.scss' as *;
+
+.sugestaoEmendasPage {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: 0 $spacing-2xl;
+}
+
+.button {
+  @apply float-right;
+  margin-top: $spacing-sm;
+}
+
+.loader {
+  @apply animate-spin;
+}
+
+.sparkles {
+  @apply h-5 w-5;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-sm border;
+  padding: $spacing-md;
+}
+
+.title {
+  composes: card-title from global;
+}
+
+.legend {
+  @apply text-sm text-gray-400;
+}
+
+.cardHeader {
+  margin-bottom: $spacing-md;
+}
+
+.cardContent {
+  @apply space-y-3;
+  padding-bottom: $spacing-sm;
+}
+
+.sugestaoEmendaItemCheck {
+  @apply text-brand-accent;
+  width: 1rem;
+  height: 1rem;
+  margin-left: auto;
+  display: none;
+}
+
+.sugestaoEmendaItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxs;
+  border-radius: $spacing-xs;
+  padding: $spacing-xs;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  @apply border-[1px] border-gray-200 text-sm text-black font-medium;
+
+  &:hover,
+  &:has(input:checked) {
+    @apply border-brand-accent-60 bg-brand-accent-40;
+  }
+
+}
+
+input:checked~.sugestaoEmendaItemCheck {
+  display: inline-block;
+}
+
+.sugestaoEmendaItemHeader {
+  @apply flex flex-row items-center gap-1 text-gray-400;
+}
+
+
+.sugestaoEmendaItemTipo {
+  @apply text-sm text-brand-accent bg-brand-accent-60 rounded-full px-2 py-1;
+  text-transform: capitalize;
+}
+
+.button {
+  float: right;
+}

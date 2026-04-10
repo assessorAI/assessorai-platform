@@ -1,0 +1,40 @@
+@use '@/styles/tokens.scss' as *;
+
+$wrapper-padding-mobile: 20px 20px;
+
+@media (max-width: $breakpoint-mobile) {
+  .wrapper {
+    padding: $wrapper-padding-mobile;
+    min-width: 100vw;
+    // max-width: 90vw;
+
+    min-height: 100vh;
+    // overflow-y: auto;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    min-height: auto;
+  }
+
+  .secondaryColumn {
+    width: 100%;
+  }
+
+  .card-auth {
+    padding: $spacing-lg !important;
+    max-width: 90vw;
+  }
+
+  .auth-form {
+    padding: $spacing-md;
+
+    // min-height: none;
+  }
+
+  .logoSvg {
+    margin-bottom: $spacing-lg;
+  }
+}

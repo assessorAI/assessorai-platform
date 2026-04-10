@@ -1,0 +1,11 @@
+@use "@/styles/tokens.scss" as *;
+
+.button {
+  float: right;
+}
+
+.requerimentoPage {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}

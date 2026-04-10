@@ -1,0 +1,64 @@
+@use "@/styles/tokens" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-md;
+}
+
+.submit {
+  float: right;
+}
+
+.selectHouse {
+  display: flex;
+  gap: $spacing-xs;
+  width: fit-content;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.actionsButtons {
+  display: flex;
+  gap: $spacing-xs;
+}
+
+.referencesArea {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  align-items: center;
+  margin-top: $spacing-lg;
+}
+
+.referencesArea p {
+  text-align: center;
+  @apply text-sm text-black;
+  max-width: 600px;
+}
+
+.quantityReferences {
+  @apply text-lg text-black;
+}
+
+.noResults {
+  @apply text-lg text-black;
+  text-align: center;
+  margin-top: $spacing-lg;
+}
+
+.verMaisButton {
+  width: fit-content;
+  margin: 0 auto;
+}

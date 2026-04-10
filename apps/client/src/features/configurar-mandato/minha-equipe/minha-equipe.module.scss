@@ -1,0 +1,20 @@
+@use '@/styles/tokens.scss' as *;
+
+.header {
+  @apply border-b border-gray-200;
+  padding-bottom: $spacing-sm;
+}
+
+.title {
+  composes: lead-title from global;
+}
+
+.description {
+  @apply text-sm text-gray-400;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}

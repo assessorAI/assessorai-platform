@@ -1,0 +1,48 @@
+@use '@/styles/tokens.scss' as *;
+
+
+.content {
+  margin-bottom: $spacing-sm;
+}
+
+.title {
+  composes: card-title from global;
+}
+
+.description {
+  @apply text-sm font-normal text-gray-400;
+}
+
+.result {
+  @apply rounded-lg p-2 font-normal;
+}
+
+.resultFavoravel {
+  @apply bg-emerald-50 border border-emerald-100 text-emerald-800;
+}
+
+.resultContrario {
+  @apply bg-red-50 border border-red-200 text-red-800;
+}
+
+.resultFavoravelComRessalvas {
+  @apply bg-yellow-50 border border-yellow-100 text-yellow-800;
+}
+
+.resultProp {
+  @apply font-medium;
+}
+
+.contentResult {
+  @apply bg-gray-50 rounded-lg text-sm text-muted-foreground;
+  padding: $spacing-md;
+}
+
+.cardContent {
+  @apply flex flex-col gap-4;
+}
+
+.sugestaoTitle {
+  @apply font-semibold text-base text-gray-600;
+  margin-bottom: $spacing-xs;
+}

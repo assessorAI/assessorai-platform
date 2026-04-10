@@ -1,0 +1,23 @@
+@use '@/styles/tokens.scss' as *;
+
+$wrapper-padding-tablet: 40px 109px;
+$wrapper-padding-lg: 40px 237px;
+
+@media (min-width: $breakpoint-tablet) {
+  .wrapper {
+    padding: $wrapper-padding-tablet;
+    min-height: 100vh;
+  }
+
+  .firstColumn {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    .wrapper {
+      padding: $wrapper-padding-lg;
+    }
+  }
+}

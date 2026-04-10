@@ -1,0 +1,29 @@
+@use "@/styles/tokens.scss" as *;
+
+.criarPlPage {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: 0 $spacing-2xl;
+}
+
+.button {
+  float: right;
+}
+
+.contentDocViewer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.contentTitle {
+  @apply text-sm text-gray-600;
+}
+
+.contentContainer { 
+  @apply border border-gray-300 rounded-md p-4 text-sm;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}

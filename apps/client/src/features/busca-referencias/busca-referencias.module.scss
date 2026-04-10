@@ -1,0 +1,21 @@
+@use "@/styles/tokens" as *;
+
+.submit {
+float: right;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.input {
+  height: 52px;
+  @apply text-base;
+}
+
+.verMaisButton {
+  width: fit-content;
+  margin: 0 auto;
+} 

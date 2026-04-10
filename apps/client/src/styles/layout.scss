@@ -1,0 +1,11 @@
+@use './tokens.scss' as *;
+
+.adm-layout-main {
+  padding: $spacing-lg;
+  max-width: 75%;
+}
+
+.layout-main {
+  padding: $spacing-lg;
+  max-width: 1128px;
+}

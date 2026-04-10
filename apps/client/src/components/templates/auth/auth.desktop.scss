@@ -1,0 +1,107 @@
+@use '@/styles/tokens.scss' as *;
+
+$wrapper-padding-xl: 0 80px;
+$wrapper-padding-2xl: 0 204.5px;
+$wrapper-padding-4xl: 0 460px;
+
+@media (min-width: $breakpoint-desktop) {
+  .wrapper {
+    overflow: hidden;
+    min-height: 100vh;
+    padding-top: $spacing-4xl;
+  }
+
+  .logoSvg {
+    align-self: flex-start;
+    width: auto;
+  }
+
+  .graySvg {
+    display: block;           
+    width: 751px;             
+    height: 710px;            
+    top: 150px;               
+    right: 50%;               
+    transform: translateX(43%); 
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    .wrapper {
+      padding: $wrapper-padding-xl;
+    }
+
+    .columns {
+      grid-template-columns: 1fr 1fr;
+      justify-items: stretch;
+      align-items: flex-start;
+    }
+
+    .firstColumn {
+      display: flex;
+      flex-direction: column;
+      margin-top: 90px;
+      gap: $spacing-lg;
+    }
+
+    .logoSvg {
+      margin-bottom: 2rem;
+      height: 1.5rem;
+    }
+
+    .purpleSvg {
+      display: block;
+      width: 560px;
+      height: 293px;
+      top: 643px;
+      left: -68px;
+    }
+
+    .graySvg {
+      width: 851px;             
+      height: 710px;            
+      top: 160px;               
+      right: 3%;               
+      transform: none;          
+    }
+  }
+
+  @media (min-width: $breakpoint-2xl) {
+    .wrapper {
+      padding: $wrapper-padding-2xl;
+    }
+
+    .purpleSvg {
+      width: 394px;
+      height: 354px;
+      top: 625.59px;
+      left: 0;
+    }
+
+    .graySvg {
+      width: 60%;               
+      height: 100%;             
+      top: 50%;                 
+      right: 3%;               
+      transform: translateY(-50%); 
+    }
+  }
+
+  @media (min-width: $breakpoint-4xl) {
+    .wrapper {
+      padding: $wrapper-padding-4xl;
+    }
+
+    .purpleSvg {
+      width: 525px;
+      height: 441px;
+      right: 0;
+      bottom: -29px;
+    }
+
+    .graySvg {
+      width: 110%;              
+      height: 110%;             
+      right: 29%;               
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use '@/styles/tokens.scss' as *;
+
+
+.cardGrid {
+  @apply flex flex-col justify-center items-center;
+  min-height: calc(100vh - 200px); 
+}
+
+.cardGridTitle {
+  @apply font-semibold;
+  margin-bottom: $spacing-lg;
+}
+
+.cardGridCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  justify-content: center;
+}
+
+.card {
+  width: 388px;
+}
+
+.cardGridCardHeader {
+  @apply flex flex-col items-center;
+  gap: $spacing-xs;
+}
+
+.cardGridCardIconContainer {
+  color: hsl(var(--brand-accent));
+  border: 1px solid transparent;
+  padding: $spacing-xs;
+  background-color: hsl(var(--brand-accent-20));
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+}
+
+.cardGridCardIconContainerAccent {
+  color: hsl(var(--brand-accent));
+  background-color: hsl(var(--brand-accent-20));
+}
+
+.cardGridCardIconContainerSecondary {
+  color: hsl(var(--brand-secondary));
+  background-color: hsl(var(--brand-secondary-20));
+}
+.cardGridCardDescription {
+  @apply text-center text-sm text-gray-500 font-normal;
+}

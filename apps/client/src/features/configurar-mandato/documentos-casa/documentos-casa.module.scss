@@ -1,0 +1,67 @@
+@use "@/styles/tokens.scss" as *;
+
+.title {
+    composes: lead-title from global;
+}
+
+.header {
+    @apply border-b border-gray-200;
+    padding-bottom: $spacing-md;
+}
+
+.description {
+    @apply text-sm text-gray-500;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.formItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $spacing-sm;
+}
+
+.formItem {
+    width: 100%;
+}
+
+.button {
+    align-self: flex-end;
+    width: fit-content;
+}
+
+.formItemFirstRow {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-xs;
+    flex-wrap: wrap;
+}
+
+.actionsCell {
+    @apply text-right;
+}
+
+.actionsIcon {
+    width: 20px !important;
+    height: 20px !important;
+}
+.actionsRemoveDocument {
+    @apply text-destructive;
+
+    &:hover {
+        @apply text-destructive/80;
+    }
+}
+
+.buttonRemoveDocument {
+    @apply bg-destructive text-white;
+
+    &:hover {
+        @apply bg-rose-800;
+    }
+}

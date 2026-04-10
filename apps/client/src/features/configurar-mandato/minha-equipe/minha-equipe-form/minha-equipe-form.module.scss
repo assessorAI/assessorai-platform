@@ -1,0 +1,14 @@
+@use "@/styles/tokens.scss" as *;
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: $spacing-xs;
+    flex-wrap: wrap;
+  }
+  
+  .formItem {
+    min-width: 281px;
+  }
+  
