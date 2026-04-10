@@ -1,0 +1,44 @@
+# Output e dados gerados
+output/*
+items/*
+logs/*
+downloads/*
+dbs/*.db
+
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Ambiente
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scrapy
+.scrapy/
+
+# Eggs/build
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+storage/*

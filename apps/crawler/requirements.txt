@@ -1,0 +1,14 @@
+scrapy
+weaviate-client
+tqdm
+tiktoken
+python-dotenv
+PyMuPDF
+html2text
+google-generativeai
+pillow
+textual
+
+scrapyd
+scrapydweb @ git+https://github.com/my8100/scrapydweb.git
+logparser
