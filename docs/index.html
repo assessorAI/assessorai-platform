@@ -6,123 +6,277 @@
     <title>AssessorAI Platform</title>
     <meta
       name="description"
-      content="Plataforma para apoio legislativo com backend, frontend e crawler integrados."
+      content="Plataforma institucional para operacao legislativa, producao documental, triagem de demandas e organizacao de mandatos e equipes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="hero">
-      <div class="container">
+      <div class="container reading-width">
         <p class="eyebrow">AssessorAI Platform</p>
-        <h1>Infraestrutura digital para operacao legislativa assistida por IA</h1>
+        <h1>Asssessor.AI</h1>
+        <h2 class="hero-subtitle">Plataforma de inteligencia artificial legislativa</h2>
+        <p class="hero-kicker">Um desenvolvimento Legisla</p>
         <p class="lead">
-          Uma plataforma integrada para mandatos e equipes parlamentares com
-          backend operacional, experiencia web e coleta automatizada de dados
-          legislativos.
+          O AssessorAI e uma plataforma voltada a mandatos, partidos,
+          organizacoes e instituicoes publicas que precisam estruturar fluxos
+          de trabalho, organizar informacao, apoiar a producao tecnica e dar
+          mais capacidade operacional a equipes que atuam em ambientes
+          legislativos e institucionais.
         </p>
         <div class="actions">
-          <a href="#arquitetura" class="button primary">Ver arquitetura</a>
-          <a href="#componentes" class="button secondary">Explorar componentes</a>
+          <a href="#plataforma" class="button primary">Entender a plataforma</a>
+          <a href="#comecar" class="button secondary">Ver como comecar</a>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="section" id="componentes">
-        <div class="container grid three">
-          <article class="card">
-            <h2>Backend</h2>
-            <p>
-              API central da plataforma com fluxos legislativos, geracao de
-              documentos, autenticacao e console administrativo.
-            </p>
-            <span class="tag">FastAPI + Streamlit</span>
-          </article>
-          <article class="card">
-            <h2>Frontend</h2>
-            <p>
-              Aplicacao web para uso cotidiano das equipes, com experiencia de
-              produto e camada BFF para integracao segura com a API.
-            </p>
-            <span class="tag">Next.js + React</span>
-          </article>
-          <article class="card">
-            <h2>Crawler</h2>
-            <p>
-              Coleta automatizada de proposicoes e metadados legislativos em
-              multiplas casas, com operacao e monitoramento dedicados.
-            </p>
-            <span class="tag">Scrapy + Scrapyd</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section alt" id="arquitetura">
-        <div class="container">
-          <p class="eyebrow">Arquitetura</p>
-          <h2>Um monorepo para tres frentes complementares</h2>
-          <div class="architecture">
-            <div class="arch-card">
-              <h3>1. Coleta</h3>
-              <p>
-                O crawler captura dados legislativos, documentos e eventos de
-                casas legislativas para alimentar processos internos.
-              </p>
-            </div>
-            <div class="arch-arrow">→</div>
-            <div class="arch-card">
-              <h3>2. Processamento</h3>
-              <p>
-                O backend organiza dados, aplica regras de negocio e habilita
-                fluxos assistidos por IA para a operacao parlamentar.
-              </p>
-            </div>
-            <div class="arch-arrow">→</div>
-            <div class="arch-card">
-              <h3>3. Entrega</h3>
-              <p>
-                O frontend oferece a camada de uso diaria para assessores,
-                gestores e operadores da plataforma.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container grid two">
-          <div>
-            <p class="eyebrow">Casos de uso</p>
-            <h2>Onde a plataforma atua</h2>
-            <ul class="feature-list">
-              <li>Redacao e apoio a documentos legislativos</li>
-              <li>Gestao de mandatos e operacao administrativa</li>
-              <li>Busca de referencias normativas e politicas</li>
-              <li>Coleta e organizacao de dados legislativos publicos</li>
-              <li>Experiencias publicas e privadas para equipes e eleitorado</li>
-            </ul>
-          </div>
-          <div class="panel">
-            <p class="eyebrow">Estrutura do repositorio</p>
-            <pre><code>apps/
-  server/
-  client/
-  crawler/
-
-docs/
-.github/workflows/</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt">
-        <div class="container narrow center">
-          <p class="eyebrow">Publicacao</p>
-          <h2>Pronto para GitHub Pages</h2>
+      <section class="section" id="plataforma">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Apresentacao</p>
+          <h2>Uma base unica para organizar rotinas que hoje costumam ficar dispersas</h2>
           <p>
-            Este site e publicado a partir da pasta <code>docs/</code> com um
-            workflow de GitHub Actions dedicado ao deploy de Pages.
+            O trabalho legislativo e institucional depende de informacao
+            publica, documentos de apoio, fluxos internos, capacidade de
+            resposta e articulacao entre diferentes perfis de equipe. Na
+            pratica, boa parte dessas rotinas ainda acontece em sistemas
+            separados, planilhas, arquivos soltos, mensagens e processos pouco
+            padronizados.
           </p>
+          <p>
+            O AssessorAI foi concebido para reduzir essa dispersao. A proposta
+            da plataforma e reunir, em um mesmo ambiente, funcionalidades para
+            gestao institucional, producao legislativa assistida, organizacao de
+            arquivos e referencias, coleta e triagem de demandas e
+            acompanhamento administrativo da operacao.
+          </p>
+          <p>
+            O ponto central nao e substituir o trabalho tecnico ou a decisao
+            politica. E oferecer uma infraestrutura digital que permita a uma
+            instituicao trabalhar com mais contexto, rastreabilidade,
+            reaproveitamento de conhecimento e capacidade de execucao.
+          </p>
+        </div>
+      </section>
+
+      <section class="section alt" id="disponivel">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Funcionalidades</p>
+          <h2>O que ja esta disponivel na plataforma</h2>
+          <p>
+            A plataforma ja expoe capacidades concretas para operacao cotidiana.
+            Hoje, a API do projeto ja contempla fluxos de autenticacao, gestao
+            de mandatos, administracao de usuarios, producao legislativa e
+            documental, organizacao de arquivos, busca inteligente de
+            referencias, registro de demandas e ferramentas de auditoria,
+            analytics e administracao da operacao.
+          </p>
+
+          <h3>Gestao institucional</h3>
+          <p>
+            O sistema ja permite cadastrar e atualizar mandatos, consultar dados
+            institucionais, associar e remover usuarios por mandato, configurar
+            acessos e manter uma estrutura organizada de identidade e operacao.
+            Tambem ja estao disponiveis fluxos de cadastro, login, ativacao de
+            conta, consulta do perfil autenticado e recuperacao de senha.
+          </p>
+
+          <h3>Producao legislativa e documental</h3>
+          <p>
+            O backend ja expoe recursos para analise de constitucionalidade,
+            sugestao de emendas, criacao de emendas, criacao assistida de
+            projetos e geracao de oficios. Esses fluxos usam contexto do
+            mandato, referencias fornecidas pela equipe e arquivos de apoio para
+            estruturar respostas mais adequadas ao trabalho parlamentar.
+          </p>
+
+          <h3>Arquivos, referencias e pesquisa</h3>
+          <p>
+            A plataforma tambem ja possui uma camada para upload, listagem,
+            consulta de conteudo e exclusao de arquivos, permitindo organizar
+            materiais de apoio e reutiliza-los nos fluxos de producao. Alem
+            disso, a API expoe busca vetorial e consulta de projetos
+            relacionados, o que abre caminho para uma pesquisa mais inteligente
+            de referencias legislativas e documentais.
+          </p>
+
+          <h3>Demandas e triagem</h3>
+          <p>
+            Ja existem endpoints para registro de demandas com anexos,
+            recuperacao de contato previamente salvo e triagem automatizada de
+            conteudo. Isso permite registrar solicitacoes, classifica-las por
+            tipo, categoria e origem e construir uma base mais organizada para
+            atendimento institucional e acompanhamento de encaminhamentos.
+          </p>
+
+          <h3>Administracao, auditoria e analytics</h3>
+          <p>
+            A plataforma tambem ja oferece recursos de administracao para uso
+            interno, incluindo painel resumido, verificacao de saude,
+            disparo administrativo de reset de senha, trilha de auditoria,
+            metricas de uso, analytics de mandatos e usuarios, gestao de
+            prompts e administracao de recursos vetoriais, como importacao,
+            reindexacao e checagem de duplicidade.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="contextos">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Contextos De Uso</p>
+          <h2>Uma ferramenta que pode servir a diferentes tipos de instituicao</h2>
+
+          <h3>Para partidos</h3>
+          <p>
+            O AssessorAI pode apoiar a organizacao de equipes, a sistematizacao
+            de propostas, a producao de documentos e a articulacao entre
+            estrutura partidaria e trabalho parlamentar. O valor aqui esta em
+            consolidar rotinas hoje espalhadas entre diferentes ferramentas e
+            dar mais consistencia ao trabalho tecnico e documental.
+          </p>
+
+          <h3>Para governos</h3>
+          <p>
+            Em areas de articulacao institucional, formulação normativa ou apoio
+            tecnico, a plataforma pode servir como base para organizar fluxos de
+            producao documental, pesquisa de referencias, tratamento de demandas
+            e acompanhamento de uso. O ganho principal e reduzir retrabalho e
+            dar mais continuidade a processos que dependem de informacao bem
+            estruturada.
+          </p>
+
+          <h3>Para organizacoes</h3>
+          <p>
+            Organizacoes da sociedade civil, institutos e estruturas de apoio a
+            advocacy ou formulacao normativa podem usar a plataforma para reunir
+            referencias, produzir insumos, organizar conhecimento e registrar
+            demandas ou fluxos de analise com mais previsibilidade.
+          </p>
+
+          <h3>Para equipes parlamentares</h3>
+          <p>
+            Para gabinetes e assessorias, o uso mais direto esta na combinacao
+            entre gestao institucional, producao legislativa assistida,
+            organizacao de arquivos, triagem de demandas e acompanhamento da
+            operacao da equipe em um mesmo ambiente.
+          </p>
+        </div>
+      </section>
+
+      <section class="section alt" id="comecar">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Implantacao</p>
+          <h2>Como comecar com um piloto institucional</h2>
+          <p>
+            A implantacao nao precisa partir de todos os modulos ao mesmo tempo.
+            O caminho mais consistente costuma ser comecar por um piloto curto,
+            com poucos fluxos priorizados e validacao real com a equipe que vai
+            operar a plataforma no dia a dia.
+          </p>
+          <ol class="ordered-list compact">
+            <li>definir qual problema institucional sera atacado primeiro</li>
+            <li>escolher os fluxos prioritarios, como producao legislativa, triagem de demandas ou organizacao documental</li>
+            <li>configurar ambiente tecnico, acessos e integracoes necessarias</li>
+            <li>validar o uso com uma equipe pequena e um conjunto controlado de tarefas</li>
+            <li>ampliar gradualmente para novos perfis, novos fluxos e novas rotinas</li>
+          </ol>
+          <p>
+            Como a plataforma ja expõe recursos administrativos e analiticos,
+            ela tambem pode ser implantada com algum nivel de governanca desde o
+            inicio, permitindo acompanhar uso, rastrear eventos importantes e
+            estruturar uma evolucao mais segura do sistema.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="repositorios">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Estrutura Da Solucao</p>
+          <h2>Como o projeto esta organizado</h2>
+          <p>
+            O AssessorAI esta organizado em um monorepo publico chamado
+            <code>assessorai-platform</code>, que reune documentacao central e
+            os principais componentes da solucao. A interface web fica em
+            <code>apps/client</code>, a API principal e os fluxos de negocio em
+            <code>apps/server</code> e a camada de coleta automatizada de dados
+            legislativos em <code>apps/crawler</code>.
+          </p>
+          <p>
+            Repositorio publico:
+            <a href="https://github.com/pmarkun/assessorai-platform">github.com/pmarkun/assessorai-platform</a>
+          </p>
+          <p>
+            A documentacao tecnica detalhada e os READMEs de cada componente
+            estao disponiveis no proprio repositorio para equipes que precisem
+            avaliar implantacao, arquitetura e configuracao do ambiente.
+          </p>
+        </div>
+      </section>
+
+      <section class="section alt" id="equipe">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Equipe Necessaria</p>
+          <h2>O que uma instituicao precisa para colocar a ferramenta de pe</h2>
+          <p>
+            A implantacao combina validacao institucional e capacidade tecnica.
+            Em geral, o arranjo minimo envolve uma coordenacao funcional para
+            priorizar fluxos e validar aderencia ao contexto de uso, uma pessoa
+            ou equipe com capacidade de backend e integracoes, uma frente de
+            implantacao da interface e ao menos uma referencia usuaria para
+            testar a ferramenta em situacoes reais.
+          </p>
+          <p>
+            Em projetos mais maduros, tambem e recomendavel haver apoio para
+            operacao, acompanhamento de dados, monitoramento administrativo e
+            evolucao continua do uso da plataforma dentro da instituicao.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="licenca">
+        <div class="container reading-width prose-block">
+          <p class="eyebrow">Licenca</p>
+          <h2>Software aberto, com reciprocidade</h2>
+          <p>
+            O AssessorAI e distribuido sob a licenca <strong>AGPL v3.0</strong>.
+            Em linguagem simples, isso significa que o codigo e aberto, pode ser
+            estudado e adaptado nos termos da licenca, e que quem modificar a
+            plataforma e passa-la a operar como servico em rede tambem deve
+            disponibilizar o codigo correspondente dessas modificacoes.
+          </p>
+          <p>
+            Esse modelo reforca colaboracao, transparencia e evolucao
+            compartilhada. Para um projeto com vocacao institucional e publica,
+            isso ajuda a manter a base tecnologica aberta e a reduzir o risco de
+            apropriacao fechada de melhorias feitas sobre a plataforma.
+          </p>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div class="container reading-width prose-block closing-copy">
+          <p class="eyebrow">Encerramento</p>
+          <h2>Uma base aberta para ampliar capacidade institucional</h2>
+          <p>
+            O AssessorAI se apresenta como uma infraestrutura digital para
+            equipes que precisam operar melhor, com mais contexto, menos
+            dispersao e mais continuidade entre pessoas, documentos, demandas e
+            processos. Seu diferencial nao esta em substituir o trabalho humano,
+            mas em oferecer uma base estruturada para que esse trabalho seja
+            realizado com mais organizacao, rastreabilidade e capacidade de
+            evolucao.
+          </p>
+          <div class="actions">
+            <a href="https://github.com/pmarkun/assessorai-platform" class="button primary">Acessar o repositório</a>
+            <a href="https://github.com/pmarkun/assessorai-platform#readme" class="button secondary">Ver documentacao tecnica</a>
+          </div>
         </div>
       </section>
     </main>
