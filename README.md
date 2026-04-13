@@ -7,6 +7,13 @@ Monorepo que centraliza os principais componentes da plataforma AssessorAI:
 - `apps/crawler`: infraestrutura de coleta legislativa com Scrapy/Scrapyd
 - `docs/`: apresentação publica estatica para GitHub Pages
 
+## Licenca
+
+Este monorepo e distribuido sob a licenca `GNU Affero General Public License v3.0`.
+
+- o texto completo esta em `LICENSE`
+- a licenca se aplica ao monorepo como um todo, incluindo `apps/server`, `apps/client` e `apps/crawler`, salvo indicacao expressa em contrario
+
 ## Visao Geral
 
 O AssessorAI e uma plataforma para apoiar equipes parlamentares em fluxos de trabalho legislativos, atendimento de demandas, pesquisa normativa e automacao operacional.

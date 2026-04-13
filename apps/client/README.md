@@ -1,175 +1,149 @@
-# AssessorAI — Frontend
+# AssessorAI Client
 
-> Plataforma web para acelerar a produtividade de assessores legislativos brasileiros.
+Frontend web da plataforma AssessorAI para uso cotidiano de equipes parlamentares. Este app organiza a experiencia do produto para autenticacao, configuracao de mandatos, producao legislativa assistida, administracao e atendimento de demandas, atuando tambem como BFF para a API principal.
 
----
+## Arquitetura
 
-## O que é o AssessorAI?
+O `apps/client` e a camada de experiencia do produto na web.
 
-O **AssessorAI** é uma ferramenta desenvolvida para equipes de mandatos parlamentares. Ela centraliza tarefas que hoje são feitas de forma manual, fragmentada e demorada — como redigir projetos de lei, criar requerimentos, analisar emendas e coletar demandas da base eleitoral.
+- entrega a interface principal da plataforma
+- usa Next.js App Router com React 19
+- implementa rotas BFF em `src/app/api/` para consumo autenticado do backend
+- concentra fluxos de autenticacao, configuracao de mandato e operacao legislativa
+- possui area administrativa para gestao de usuarios e mandatos
 
-A plataforma combina inteligência artificial com o contexto específico do mandato (perfil parlamentar, posicionamento político, documentos da casa legislativa) para produzir textos legislativos mais precisos, no estilo do parlamentar e dentro das normas da casa.
+### Componentes principais
 
-### Funcionalidades principais
+- `src/app/`: paginas e rotas App Router
+- `src/app/api/`: rotas BFF para comunicacao com a API
+- `src/features/`: modulos de negocio por dominio
+- `src/components/`: componentes reutilizaveis de interface
+- `src/config/`: configuracoes globais e endpoints
+- `src/test/`: testes com Jest e Testing Library
 
-- **Produção legislativa com IA**: geração de projetos de lei, requerimentos, sugestão de emendas e análise de constitucionalidade
-- **Coleta de demandas**: página pública personalizada para o eleitorado enviar demandas diretamente ao mandato
-- **Gestão do mandato**: configuração do perfil parlamentar, equipe, documentos e dados públicos
-- **Busca de referências**: pesquisa em fontes legislativas para embasar propostas
-- **Administração**: painel para gerenciar múltiplos mandatos e usuários da plataforma
+### Integracoes externas
 
----
+- API principal AssessorAI
+- Auth.js / NextAuth para autenticacao
+- Google Places API para autocomplete e endereco
+- ferramentas opcionais de analytics e suporte
 
-## Documentação completa
+## Pre-requisitos
 
-A documentação central do projeto agora vive no monorepo `assessorai-platform`.
+- Node.js 20 ou superior
+- npm 10 ou superior
+- acesso a uma instancia do backend AssessorAI
 
-- README raiz: `../../README.md`
-- Checklist de publicação: `../../docs/publication-checklist.md`
-
----
-
-## Stack
-
-| Camada | Tecnologia |
-|---|---|
-| Framework | [Next.js 15](https://nextjs.org/) (App Router) |
-| UI | [React 19](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/) |
-| Formulários | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) |
-| Autenticação | [Auth.js v5 (NextAuth)](https://authjs.dev/) com JWT |
-| Requisições | Axios (`apiClient`) |
-| Testes | [Jest](https://jestjs.io/) + [Testing Library](https://testing-library.com/) |
-| Estilos extras | SCSS Modules com design tokens |
-
----
-
-## Arquitetura BFF (Backend For Frontend)
-
-Este repositório contém **apenas o frontend**. O backend real é um microsserviço externo separado.
-
-O servidor Next.js atua como um **BFF**: as rotas em `src/app/api/` recebem as chamadas do navegador, adicionam autenticação (token JWT da sessão) e repassam para a API externa. Isso evita expor a URL e as credenciais do backend diretamente para o cliente.
-
-```
-Navegador  →  /api/mandato  →  BFF (Next.js)  →  https://api.assessorai.org
-```
-
----
-
-## Pré-requisitos
-
-- [Node.js](https://nodejs.org/) >= 20
-- [npm](https://www.npmjs.com/) >= 10
-- Acesso a uma instância da API AssessorAI (backend externo)
-
----
-
-## Instalação e execução
+## Instalacao
 
 ```bash
-# 1. Entre no diretório do app dentro do monorepo
 cd apps/client
-
-# 2. Instale as dependências
 npm install
-
-# 3. Configure as variáveis de ambiente
 cp .env.example .env.local
-# Edite o .env.local com os valores do seu ambiente
+```
 
-# 4. Inicie o servidor de desenvolvimento
+Depois de preencher `.env.local`, inicie o ambiente de desenvolvimento:
+
+```bash
 npm run dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no navegador.
+## Configuracao de APIs e servicos
 
----
+Este app depende de integracoes externas para funcionar completamente.
 
-## Variáveis de ambiente
+### Backend AssessorAI
 
-Copie `.env.example` para `.env.local` e preencha os valores.
-O arquivo `.env.local` **nunca deve ser commitado**.
+- `BACKEND_ASSESSORAI_URL`: obrigatoria
 
-| Variável | Obrigatória | Descrição |
-|---|---|---|
-| `BACKEND_ASSESSORAI_URL` | ✅ | URL base da API do backend externo |
-| `AUTH_SECRET` | ✅ | Secret do NextAuth — gere com `openssl rand -base64 32` |
-| `NEXTAUTH_URL` | ✅ | URL pública da aplicação (ex: `http://localhost:3000`) |
-| `GOOGLE_PLACES_API_KEY` | ✅ | Chave da Google Places API (autocomplete de endereços) |
-| `NEXT_PUBLIC_GOOGLE_TAG_ID` | ❌ | ID do Google Tag Manager (analytics) |
-| `NEXT_FACEBOOK_PIXEL_ID` | ❌ | ID do Facebook Pixel (analytics) |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | ❌ | Número de WhatsApp de suporte |
-| `NEXT_PUBLIC_LOCALE` | ❌ | Locale padrão (default: `pt-BR`) |
+Define a URL base da API usada pelo BFF e pelos fluxos autenticados do produto.
 
----
+### Autenticacao
 
-## Scripts disponíveis
+- `AUTH_SECRET`: obrigatoria
+- `NEXTAUTH_URL`: obrigatoria
+
+Essas variaveis sustentam o fluxo de autenticacao e callbacks do Auth.js.
+
+### Google Places
+
+- `GOOGLE_PLACES_API_KEY`: obrigatoria quando o autocomplete de enderecos estiver habilitado
+
+### Analytics e suporte
+
+Variaveis opcionais:
+
+- `NEXT_PUBLIC_GOOGLE_TAG_ID`
+- `NEXT_FACEBOOK_PIXEL_ID`
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`
+- `NEXT_PUBLIC_WHATSAPP_MESSAGE`
+- `NEXT_PUBLIC_LINK_PRECISANDO_AJUDA`
+
+## Configuracao do Ambiente Local
+
+Use `.env.example` como base:
 
 ```bash
-npm run dev      # Inicia o servidor de desenvolvimento
-npm run build    # Gera o build de produção
-npm run start    # Inicia o servidor de produção (requer build)
-npm run lint     # Verifica o código com ESLint
-npm run test     # Roda os testes com Jest
+cp .env.example .env.local
 ```
 
----
+Exemplo minimo para desenvolvimento local:
 
-## Estrutura de pastas
-
-```
-src/
-├── app/                     # Rotas Next.js (App Router)
-│   ├── (public)/            # Páginas públicas (login, registro, coleta de demandas)
-│   ├── (private)/           # Páginas autenticadas (dashboard, configurações)
-│   ├── (adm)/               # Painel de administração
-│   └── api/                 # Rotas BFF — proxy autenticado para o backend externo
-│
-├── features/                # Módulos por domínio de negócio (lógica + UI)
-│   ├── auth/                # Autenticação (login, registro, reset de senha)
-│   ├── configurar-mandato/  # Dados, equipe, documentos e foto do mandato
-│   ├── coleta-demadas/      # Coleta de demandas do eleitorado
-│   ├── adm/                 # Administração de mandatos e usuários
-│   └── ...
-│
-├── api/                     # Handlers BFF e services (comunicação com o backend)
-│   ├── mandato/             # Operações de mandato
-│   ├── register/            # Registro e validação de campos
-│   └── ...
-│
-├── components/              # Componentes UI reutilizáveis
-├── config/                  # Configurações globais (endpoints, constantes)
-├── lib/                     # Utilitários e serviços compartilhados
-├── styles/                  # Tokens de design e estilos globais (SCSS)
-├── i18n/                    # Internacionalização (pt-BR)
-└── test/                    # Testes unitários e de integração
+```env
+BACKEND_ASSESSORAI_URL=http://localhost:8000
+AUTH_SECRET=seu_secret_local
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_PLACES_API_KEY=sua_chave_local
+NEXT_PUBLIC_LOCALE=pt-BR
+NEXT_PUBLIC_LOCALE_CODE=BR
 ```
 
----
+Observacoes:
+
+- nao versione `.env.local`
+- o build publico do monorepo parte de `.env.example`
+- este frontend depende de uma instancia funcional do backend para fluxos reais
+
+## Exemplo de Uso
+
+### Subir o ambiente local
+
+```bash
+cd apps/client
+npm run dev
+```
+
+Abra `http://localhost:3000` no navegador.
+
+### Fluxo basico
+
+1. iniciar o backend AssessorAI
+2. configurar `BACKEND_ASSESSORAI_URL`
+3. iniciar o frontend com `npm run dev`
+4. acessar login, dashboard, configuracao de mandato e fluxos de producao legislativa
+
+### Build de producao
+
+```bash
+npm run build
+npm run start
+```
 
 ## Testes
 
+Comandos principais:
+
 ```bash
 npm run test
+npm run build
 ```
 
-Os testes usam **Jest** com **Testing Library**. Os arquivos ficam em `src/test/`.
+Observacoes:
 
----
+- os testes usam Jest com Testing Library
+- o build valida o App Router, as rotas BFF e a tipagem principal
+- para testes funcionais mais completos, o backend deve estar disponivel no ambiente configurado
 
-## Contribuição
+## Licenca
 
-Leia o [CONTRIBUTING.md](./CONTRIBUTING.md) para entender o fluxo de trabalho, padrões de código e como abrir um Pull Request.
-
-## Status de publicação
-
-Este app foi saneado no monorepo para publicacao tecnica:
-
-- nenhum `.env` real deve ser versionado
-- a configuracao publica parte de `.env.example`
-- o backend continua sendo uma dependencia externa
-
----
-
-## Licença
-
-[MIT](./LICENSE)
+Este app esta coberto pela licenca `GNU Affero General Public License v3.0` adotada no monorepo. Consulte `../../LICENSE`.
