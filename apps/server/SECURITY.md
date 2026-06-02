@@ -1,18 +1,19 @@
-# Politica de Seguranca
+# Politica De Seguranca
 
-## Versoes suportadas
+Este componente faz parte de um monorepo publico historico da plataforma AssessorAI, criada pela [Legisla Brasil](https://legislabrasil.org/).
 
-Este projeto esta em modo de descontinuacao. Nao ha garantia de correcao de
-vulnerabilidades em qualquer branch.
+## Versoes Suportadas
 
-## Como reportar vulnerabilidades
+Nao ha garantia de correcao de vulnerabilidades em qualquer branch. Relatos de seguranca sao avaliados em regime de melhor esforco.
 
-- Prefira GitHub Security Advisory (private report), quando disponivel.
-- Se nao for possivel, abra issue sem divulgar detalhes sensiveis.
+## Como Reportar Vulnerabilidades
 
-## Escopo atual
+- Prefira GitHub Security Advisory com relato privado, quando disponivel.
+- Se isso nao for possivel, abra uma issue sem divulgar detalhes sensiveis exploraveis.
+- Inclua passos de reproducao, impacto esperado e contexto de ambiente quando puder.
 
-- Correcoes sao avaliadas em regime de melhor esforco.
+## Escopo Atual
+
+- Correcoes podem ser aceitas por pull request quando forem claras, verificaveis e compativeis com o estado historico do projeto.
 - Nao existe SLA de resposta.
-- Segredos encontrados no historico devem ser tratados com rotacao imediata de
-  credenciais.
+- Segredos encontrados no conteudo atual ou historico devem ser tratados com revogacao e rotacao imediata das credenciais afetadas.

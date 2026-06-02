@@ -1,165 +1,100 @@
-# Guia de Contribuição — AssessorAI Frontend
+# Contribuindo com o AssessorAI Client
 
-Obrigado por querer contribuir com o AssessorAI! Este documento explica como o projeto está organizado e o que esperamos de um bom Pull Request.
+Obrigado pelo interesse em contribuir.
 
----
+Este componente faz parte de um monorepo publico historico da plataforma AssessorAI, criada pela [Legisla Brasil](https://legislabrasil.org/). Contribuicoes sao avaliadas em regime de melhor esforco, sem SLA.
 
-## Índice
+## Codigo De Conduta
 
-- [Código de Conduta](#código-de-conduta)
-- [Como reportar um bug](#como-reportar-um-bug)
-- [Como sugerir uma melhoria](#como-sugerir-uma-melhoria)
-- [Configuração do ambiente](#configuração-do-ambiente)
-- [Fluxo de trabalho com Git](#fluxo-de-trabalho-com-git)
-- [Padrões de código](#padrões-de-código)
-- [Testes](#testes)
-- [Mensagens de commit](#mensagens-de-commit)
+Seja respeitoso e construtivo. Criticas devem ser direcionadas ao codigo, documentacao ou comportamento do sistema, nunca as pessoas.
 
----
+## Escopo De Contribuicao
 
-## Código de Conduta
+Contribuicoes mais adequadas para este repositorio:
 
-Seja respeitoso e construtivo. Críticas devem ser direcionadas ao código, nunca às pessoas.
+- melhorias de documentacao;
+- correcao de instrucoes de instalacao, build e testes;
+- ajustes de seguranca;
+- remocao de referencias internas residuais;
+- manutencao comunitaria que preserve compatibilidade sempre que possivel.
 
----
+Mudancas funcionais amplas devem explicar claramente motivacao, impacto e forma de validacao.
 
-## Como reportar um bug
+## Como Reportar Um Bug
 
-1. Verifique se o bug já foi reportado nas [Issues](../../issues).
-2. Abra uma nova issue com:
-   - Descrição clara do problema
-   - Passos para reproduzir
-   - Comportamento esperado vs. comportamento atual
-   - Versão do Node.js e navegador utilizados
-   - Prints ou vídeos, se possível
+Abra uma issue com:
 
----
+- descricao clara do problema;
+- passos para reproduzir;
+- comportamento esperado e comportamento atual;
+- versao do Node.js e navegador utilizados;
+- prints ou videos, se ajudarem a entender o problema.
 
-## Como sugerir uma melhoria
+## Configuracao Do Ambiente
 
-1. Abra uma issue com o prefixo `[Feature Request]` no título.
-2. Descreva o **caso de uso** — qual problema a funcionalidade resolve.
-3. Aguarde o feedback dos mantenedores antes de abrir um PR.
+Siga as instrucoes do `README.md` deste app para instalar e rodar o projeto localmente.
 
----
+## Fluxo De Trabalho
 
-## Configuração do ambiente
+1. Crie uma branch com nome descritivo.
+2. Implemente mudancas pequenas e focadas.
+3. Rode `npm run test` quando alterar comportamento testado.
+4. Rode `npm run lint` e `npm run build` quando estiverem disponiveis no ambiente local.
+5. Atualize documentacao relevante.
+6. Abra a pull request explicando o motivo da mudanca e a validacao realizada.
 
-Siga as instruções do [README.md](./README.md) para instalar e rodar o projeto localmente.
-
----
-
-## Fluxo de trabalho com Git
-
-1. **Fork** o repositório
-2. Crie uma branch a partir de `main` com nome descritivo:
-   ```bash
-   git checkout -b feat/nome-da-funcionalidade
-   # ou
-   git checkout -b fix/descricao-do-bug
-   ```
-3. Implemente as mudanças
-4. Rode os testes: `npm run test`
-5. Verifique o lint: `npm run lint`
-6. Faça o commit seguindo as [convenções de mensagem](#mensagens-de-commit)
-7. Abra um **Pull Request** para a branch `main`
-
-### Convenções de nome de branch
+### Convencoes De Nome De Branch
 
 | Prefixo | Uso |
 |---|---|
 | `feat/` | Nova funcionalidade |
-| `fix/` | Correção de bug |
-| `tech/` | Refatoração, atualização de dependências |
-| `docs/` | Atualização de documentação |
-| `test/` | Adição ou correção de testes |
+| `fix/` | Correcao de bug |
+| `tech/` | Refatoracao, manutencao ou dependencias |
+| `docs/` | Atualizacao de documentacao |
+| `test/` | Adicao ou correcao de testes |
 
----
+## Padroes De Codigo
 
-## Padrões de código
-
-### Geral
-
-- TypeScript estrito — evite `any`
-- Prefira `const` em vez de `function` para componentes e funções
-- Use **early returns** para reduzir aninhamento
-- Nomes de funções de evento devem começar com `handle` (ex: `handleClick`, `handleBlur`)
-- Implemente atributos de acessibilidade nos elementos interativos (`aria-label`, `tabIndex`, etc.)
-
-### Estilização
-
-- Use **Tailwind CSS** para estilização. Evite CSS inline ou arquivos `.css` avulsos
-- Para estilização com tokens do design system, use **SCSS Modules** com `@use "../../../styles/tokens.scss"`
-- Não misture abordagens: escolha Tailwind ou SCSS Module por componente
-
-### Componentes
-
-- Componentes reutilizáveis ficam em `src/components/`
-- Componentes específicos de um domínio ficam em `src/features/`
-- Quando um componente tiver arquivos associados (`.scss`, `.types.ts`), crie uma pasta para ele:
-  ```
-  src/components/upload-photo-perfil/
-  ├── upload-photo-perfil.tsx
-  └── upload-photo-perfil.module.scss
-  ```
-
-### Formulários
-
-- Use **React Hook Form** com `zodResolver`
-- Defina o schema Zod em um arquivo separado com sufixo `.schema.ts`
-- Mensagens de validação ficam no arquivo `.i18n.ts` do módulo correspondente
-
-### Rotas de API (BFF)
-
-- Cada rota em `src/app/api/` deve delegar sua lógica a um **handler** em `src/api/`
-- O arquivo `route.ts` deve ser enxuto, apenas chamando o handler
-- Handlers que acessam o backend externo **devem** usar o `apiClient` (injeta o token JWT automaticamente)
-- Endpoints públicos (sem autenticação) devem usar `fetch` diretamente
-
----
+- TypeScript estrito sempre que possivel.
+- Evite `any` sem justificativa.
+- Prefira componentes e funcoes pequenas, com responsabilidade clara.
+- Use atributos de acessibilidade nos elementos interativos.
+- Preserve a organizacao existente entre `src/components/`, `src/features/` e `src/app/api/`.
+- Nao inclua segredos, dados pessoais reais, arquivos `.env.local` ou credenciais.
 
 ## Testes
 
-- Testes ficam em `src/test/`
-- Escreva testes para comportamentos críticos de formulários e fluxos de usuário
-- Use `@testing-library/react` e `@testing-library/user-event`
-- Rode os testes antes de abrir o PR:
-  ```bash
-  npm run test
-  ```
+Testes ficam em `src/test/` e usam Jest com Testing Library.
 
----
+Comando principal:
 
-## Mensagens de commit
-
-Siga o padrão [Conventional Commits](https://www.conventionalcommits.org/) **em português**:
-
-```
-<tipo>(<escopo opcional>): <descrição curta>
+```bash
+npm run test
 ```
 
-### Tipos aceitos
+## Mensagens De Commit
 
-| Tipo | Quando usar |
-|---|---|
-| `feat` | Nova funcionalidade |
-| `fix` | Correção de bug |
-| `tech` | Refatoração ou melhoria técnica sem mudança de comportamento |
-| `docs` | Documentação |
-| `test` | Adição ou correção de testes |
-| `style` | Formatação, sem mudança de lógica |
+Prefira Conventional Commits em portugues:
 
-### Exemplos
-
-```
-feat(mandato): adiciona campo de slug para URL pública
-fix(coleta-demandas): corrige parâmetro da rota dinâmica [slug-mandato]
-tech(auth): remove componentes de teste deixados no código
-docs: adiciona guia de contribuição e licença MIT
+```text
+<tipo>(<escopo opcional>): <descricao curta>
 ```
 
----
+Tipos usuais:
 
-## Dúvidas?
+- `feat`: nova funcionalidade;
+- `fix`: correcao de bug;
+- `tech`: refatoracao ou melhoria tecnica sem mudanca de comportamento;
+- `docs`: documentacao;
+- `test`: adicao ou correcao de testes;
+- `style`: formatacao, sem mudanca de logica.
 
-Abra uma [Discussion](../../discussions) ou uma issue com a label `question`.
+## Creditos
+
+Criado pela [Legisla Brasil](https://legislabrasil.org/).
+
+Desenvolvimento:
+
+- Pedro Markun, maintainer: <https://github.com/pmarkun>
+- Carolina Borges
+- Nicole Oliveira: <https://github.com/nicoleoliveira>

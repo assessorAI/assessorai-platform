@@ -1,5 +1,7 @@
 # Work Log
 
+> Nota: este arquivo preserva um log operacional legado do desenvolvimento do AssessorAI Server. Ele pode conter contexto antigo, decisoes intermediarias e referencias historicas que nao representam necessariamente o estado publico final do monorepo.
+
 ## 2026-02-26T00:00:00Z - GET /mandatos/{id_ou_slug} tornando público
 - **Feature**: `GET /mandatos/{id_ou_slug}` agora é acessível sem autenticação.
 - **Implementação**: extraído para `public_router` em `routers/mandatos.py` e registrado em `main.py` sem `dependencies=[Depends(get_current_user)]`.
@@ -735,7 +737,7 @@ Completely rewrote the "Admin Avaliação Prompts" page with intuitive forms for
 - **Field Validation**: Type-specific required field checks prevent incomplete submissions
 
 **User Experience**:
-- Clear field labels with helpful placeholders
+- Clear field labels with helpful example text
 - Context-sensitive validation messages
 - Seamless toggle between form mode and JSON mode
 - Better readability of LLM responses with markdown formatting
@@ -1853,7 +1855,7 @@ content = load_prompt("generate_oficio", session=db_session)
 ## 2026-03-05T14:53:51Z - Limpeza de Estrutura e Organizacao de Arquivos
 - Movidos scripts manuais da raiz para `scripts/manual/` e adicionada documentacao em `scripts/manual/README.md`.
 - Consolidada documentacao tecnica em `docs/` com renomeacao dos guias vetoriais e de ambiente para nomes padronizados.
-- Removidos arquivos legados da raiz (`fly.toml`, `TODO.md`, `utils.py`) e criado `docs/backlog.md` para pendencias abertas.
+- Removidos arquivos legados da raiz (`fly.toml`, arquivo de tarefas historicas, `utils.py`) e criado `docs/backlog.md` para pendencias abertas.
 
 ## 2026-03-05T14:54:39Z - Consolidacao de Packaging no pyproject
 - Removido `setup.py` para eliminar duplicacao de configuracao de pacote.
